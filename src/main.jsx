@@ -1,10 +1,156 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Root from './Root.jsx';
+import Aos from 'aos';
+import Home from './Components/Home.jsx';
+import Register from './Components/Register.jsx';
+import Login from './Components/Login.jsx';
+import PrivateRoute from './Components/PrivateRoute.jsx';
+import AddCraftItem from './Components/AddCraftItem.jsx';
+import MyArtAndCraftList from './Components/MyArtAndCraftList.jsx';
+import AllArtCraftItems from './Components/AllArtCraftItems.jsx';
+import CraftDetails from './Components/CraftDetails.jsx';
+import UpdateCraft from './Components/UpdateCraft.jsx';
+import CreativeExpressions from './Components/CreativeExpressions.jsx';
+import CreativeExpressionsCardDetails from './CreativeExpressionsCardDetails.jsx';
+import HandcraftedWonders from './Components/HandcraftedWonders.jsx';
+import ArtisianDelights from './ArtisianDelights.jsx';
+import MasterpieceCollections from './Components/MasterpieceCollections.jsx';
+import ArtisticTreasures from './Components/ArtisticTreasures.jsx';
+import ArtisticTreasuresCards from './Components/ArtisticTreasuresCards.jsx';
+import CraftedElegance from './Components/CraftedElegance.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/crafts')
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      }
+      ,
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: "/addcraftitem",
+        element: <PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
+
+      },
+      {
+        path: "/myart&craftlist",
+        element: <PrivateRoute><MyArtAndCraftList></MyArtAndCraftList></PrivateRoute>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/crafts')
+      }, {
+        path: '/allart&craft',
+        element: <AllArtCraftItems></AllArtCraftItems>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/crafts')
+      },
+      {
+        path: '/crafts/:id',
+        element: <PrivateRoute><CraftDetails></CraftDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/crafts/${params.id}`)
+      },
+      {
+        path: '/updateCraft/:id',
+        element: <PrivateRoute><UpdateCraft></UpdateCraft></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/crafts/${params.id}`)
+      },
+      {
+        path: '/CreativeExpressions',
+        element: <CreativeExpressions></CreativeExpressions>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/CreativeExpressions')
+      },
+      {
+        path: '/CreativeExpressions/:id',
+        element: <PrivateRoute><CreativeExpressionsCardDetails></CreativeExpressionsCardDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/CreativeExpressions/${params.id}`)
+
+      },
+      {
+        path: '/HandcraftedWonders',
+        element: <HandcraftedWonders></HandcraftedWonders>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/HandcraftedWonders')
+      },
+      {
+        path: '/HandcraftedWonders/:id',
+        element: <PrivateRoute><CreativeExpressionsCardDetails></CreativeExpressionsCardDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/HandcraftedWonders/${params.id}`)
+
+      },
+
+      {
+        path: '/ArtisianDelights',
+        element: <ArtisianDelights></ArtisianDelights>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/ArtisianDelights')
+      },
+      {
+        path: '/ArtisianDelights/:id',
+        element: <PrivateRoute><CreativeExpressionsCardDetails></CreativeExpressionsCardDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/ArtisianDelights/${params.id}`)
+
+      },
+      {
+        path: '/MasterpieceCollections',
+        element: <MasterpieceCollections></MasterpieceCollections>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/MasterpieceCollections')
+      },
+      {
+        path: '/MasterpieceCollections/:id',
+        element: <PrivateRoute><CreativeExpressionsCardDetails></CreativeExpressionsCardDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/MasterpieceCollections/${params.id}`)
+
+      },
+      {
+        path: '/ArtisticTreasures',
+        element: <ArtisticTreasures></ArtisticTreasures>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/ArtisticTreasures')
+      },
+      {
+        path: '/ArtisticTreasures/:id',
+        element: <PrivateRoute><ArtisticTreasuresCards></ArtisticTreasuresCards></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/ArtisticTreasures/${params.id}`)
+
+      },
+      {
+        path: '/CraftedElegance',
+        element: <CraftedElegance></CraftedElegance>,
+        loader: () => fetch('https://assignment-10-server-side-drab.vercel.app/CraftedElegance')
+      },
+      {
+        path: '/CraftedElegance/:id',
+        element: <PrivateRoute><CreativeExpressionsCardDetails></CreativeExpressionsCardDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://assignment-10-server-side-drab.vercel.app/CraftedElegance/${params.id}`)
+
+      },
+
+
+    ],
+  },
+]);
+
+Aos.init();
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <Toaster />
+    </AuthProvider>
+  </React.StrictMode>,
 )
