@@ -89,11 +89,11 @@ const Navbar = () => {
                                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full hover:border-2 border-red-600 " >
-                                            <img className="h-10 w-10 rounded-full" src={user.photoURL} alt="" />
+                                        <img className="h-10 w-10 rounded-full" src={user.photoURL} alt="" />
                                         </div>
                                     </div>
                                 </div>
-
+                               
                             </div>
                         }
                     </div>

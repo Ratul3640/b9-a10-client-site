@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { loginUser, GoogleLogin, GithubLogin } = useContext(AuthContext);
+    const { loginUser, GoogleLogin , GithubLogin } = useContext(AuthContext);
     // console.log( GithubLogin)
 
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Login = () => {
         // console.log(email, password)
         loginUser(email, password)
             .then(() => {
-                toast.success('Login with Email and Password Succesfully')
+                toast.success('Login with Email and Password Successfully')
                 navigate('/')
             })
             .catch(error => {
@@ -35,7 +35,7 @@ const Login = () => {
     const handleGoogleLogin = () => {
         GoogleLogin()
             .then(() => {
-                toast.success('Google Login Succesfully')
+                toast.success('Google Login Successfully')
                 navigate('/')
             })
             .catch(error => {
@@ -43,15 +43,15 @@ const Login = () => {
             })
     }
 
-    const handleGithubLogin = () => {
+    const handleGithubLogin =()=>{
         GithubLogin()
-            .then(() => {
-                toast.success('Github Login Succesfully')
-                navigate('/')
-            })
-            .catch(error => {
-                console.error(error)
-            })
+        .then(() => {
+            toast.success('Github Login Successfully')
+            navigate('/')
+        })
+        .catch(error => {
+            console.error(error)
+        })
     }
     return (
         <div>

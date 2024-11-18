@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import { Link, } from 'react-router-dom';
 import Swal from 'sweetalert2';
 const MyArtAndCraftCard = ({ craft }) => {
-    const { _id, item_name, price, rating, customization, stockStatus, image } = craft;
+    const { _id, item_name,  price, rating, customization, stockStatus, image } = craft;
+    
+    
 
-
-
-
+   
     const handleDelete = (id) => {
         console.log(id)
         Swal.fire({
@@ -31,7 +31,7 @@ const MyArtAndCraftCard = ({ craft }) => {
                                 text: "Craft has been deleted.",
                                 icon: "success"
                             });
-                            window.location.reload();
+                            window. location. reload();
                             // const remaining = crafts.filter(craft => craft._id !== id);
                             // setCrafts(remaining);
                         }
@@ -45,9 +45,9 @@ const MyArtAndCraftCard = ({ craft }) => {
 
     }
 
-
+   
     return (
-
+       
 
         <div className="mb-10">
             <div>

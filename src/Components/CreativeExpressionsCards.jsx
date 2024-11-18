@@ -23,7 +23,7 @@ const CreativeExpressionsCards = ({ craft }) => {
     );
 };
 
-CreativeExpressionsCards.propTypes = {
+CreativeExpressionsCards.propTypes={
     craft: PropTypes.any.isRequired,
 
 }

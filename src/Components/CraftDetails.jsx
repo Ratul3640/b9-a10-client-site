@@ -1,15 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
 
 const CraftDetails = () => {
     const loddedCraft = useLoaderData();
     // console.log(loddedCraft)
-    const { item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, image } = loddedCraft;
+    const {  item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, image } = loddedCraft;
 
 
     return (
         <div className="my-5">
 
-
+            
             <div className="card bg-base-100  shadow-xl">
                 <figure><img className="h-[500px] w-full rounded-lg" src={image} alt="Resort" /></figure>
                 <div className="card-body space-y-3">
@@ -41,11 +41,11 @@ const CraftDetails = () => {
                     <p className="text-lg font-medium"><span className="font-bold lg:text-2xl text-xl">Price : </span> <span className="font-bold text-xl text-red-500">{price}</span> </p>
 
 
-
+                  
 
                     <div className="flex justify-between ">
-
-
+                
+                        
 
 
                     </div>
@@ -54,8 +54,8 @@ const CraftDetails = () => {
             </div>
 
         </div>
-
-
+        
+        
     );
 };
 

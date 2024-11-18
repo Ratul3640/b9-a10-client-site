@@ -69,7 +69,7 @@ const ReleventSection = () => {
                             <h2 className="card-title">Jhon</h2>
                             <p>Email : jhon1122@gmail.com</p>
                             <p>Phone : 017XXXXXXXX</p>
-
+                            
                         </div>
                     </div>
                     <div className="card card-compact bg-base-100 shadow-xl hover:bg-[#23E76A]" data-aos="flip-up" data-aos-duration="1000">
@@ -78,7 +78,7 @@ const ReleventSection = () => {
                             <h2 className="card-title">Rohan</h2>
                             <p>Email : rohan1122@gmail.com</p>
                             <p>Phone : 018XXXXXXXX</p>
-
+                            
                         </div>
                     </div>
                     <div className="card card-compact  bg-base-100 shadow-xl hover:bg-[#23E76A]" data-aos="flip-up" data-aos-duration="1000">
@@ -87,7 +87,7 @@ const ReleventSection = () => {
                             <h2 className="card-title">Bilton</h2>
                             <p>Email : bilton1122@gmail.com</p>
                             <p>Phone : 019XXXXXXXX</p>
-
+                            
                         </div>
                     </div>
                     <div className="card card-compact  bg-base-100 shadow-xl hover:bg-[#23E76A]" data-aos="flip-up" data-aos-duration="1000">
@@ -96,7 +96,7 @@ const ReleventSection = () => {
                             <h2 className="card-title">Deny</h2>
                             <p>Email : deny1122@gmail.com</p>
                             <p>Phone : 015XXXXXXXX</p>
-
+                            
                         </div>
                     </div>
                 </div>

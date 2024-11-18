@@ -36,7 +36,7 @@ const SwiperSlider = () => {
                                 <h1 className="mb-5 text-5xl font-bold">You Can Find
 
                                     <Typewriter
-                                        words={[' Artisan', ' Design', ' Canvas', ' Crafts',]}
+                                        words={[ ' Artisan', ' Design',' Canvas', ' Crafts',]}
                                         loop={5}
                                         cursor
                                         cursorStyle='_'
@@ -48,7 +48,7 @@ const SwiperSlider = () => {
                                     />
                                 </h1>
 
-
+                                
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ const SwiperSlider = () => {
                                     />
                                 </h1>
 
-
+                              
 
                             </div>
                         </div>
@@ -100,7 +100,7 @@ const SwiperSlider = () => {
                                     // onType={handleType}
                                     />
                                 </h1>
-
+                                
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@ const SwiperSlider = () => {
                                     />
                                 </h1>
 
-
+                               
                             </div>
                         </div>
                     </div>

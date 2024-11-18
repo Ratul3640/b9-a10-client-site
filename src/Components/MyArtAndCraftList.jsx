@@ -14,7 +14,7 @@ const MyArtAndCraftList = () => {
 
     // console.log(crafts)
 
-
+    
 
 
 
@@ -23,9 +23,9 @@ const MyArtAndCraftList = () => {
 
         <div>
             {
-                crafts.map(craft => <MyArtAndCraftCard craft={craft} key={craft._id}></MyArtAndCraftCard>)
+                crafts.map(craft=><MyArtAndCraftCard craft={craft} key={craft._id}></MyArtAndCraftCard>)
             }
-
+           
 
 
 

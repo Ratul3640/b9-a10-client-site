@@ -3,12 +3,12 @@ import { useLoaderData } from "react-router-dom";
 
 const UpdateCraft = () => {
 
-    const loddedCraft = useLoaderData();
+    const loddedCraft=useLoaderData();
     // console.log(loddedCraft)
-    const { _id, item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, image } = loddedCraft;
+    const {_id,item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, image }=loddedCraft;
     // console.log(item_name)
 
-    const handleCraftUpdate = (e) => {
+    const handleCraftUpdate=(e)=>{
         e.preventDefault();
         const form = e.target;
         const item_name = form.item_name.value;
@@ -20,23 +20,23 @@ const UpdateCraft = () => {
         const processing_time = form.processing_time.value;
         const stockStatus = form.stockStatus.value;
         const image = form.image.value;
-
-        const craftItem = { item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, image };
+       
+        const craftItem = {item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus, image };
         console.log(craftItem)
-        fetch(`https://assignment-10-server-side-drab.vercel.app/crafts/${_id}`, {
-            method: "PUT",
-            headers: {
-                'content-type': 'application/json'
+        fetch(`https://assignment-10-server-side-drab.vercel.app/crafts/${_id}`,{
+            method:"PUT",
+            headers:{
+                'content-type':'application/json'
             },
-            body: JSON.stringify(craftItem)
+            body:JSON.stringify(craftItem)
         })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                if (data.modifiedCount > 0) {
-                    toast.success("Craft Information Updated Succesfully")
-                }
-            })
+        .then(res=>res.json())
+        .then(data=>{
+            // console.log(data)
+            if(data.modifiedCount >0){
+                toast.success("Craft Information Updated Succesfully")
+            }
+        })
 
     }
     return (
@@ -45,7 +45,7 @@ const UpdateCraft = () => {
                 <h2 className="text-3xl text-center font-bold pt-5">Update Craft</h2>
                 <form onSubmit={handleCraftUpdate} className=" pt-5 pb-5 px-5 md:px-0 space-y-5 " >
                     {/* user name and user email row */}
-
+                   
                     {/* item name and Subcategory_Name row */}
                     <div className="md:flex md:w-3/4 gap-5 mx-auto">
 
@@ -136,7 +136,7 @@ const UpdateCraft = () => {
                     </div>
                 </form>
             </div>
-
+            
         </div>
     );
 };

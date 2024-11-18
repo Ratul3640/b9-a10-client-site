@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const HandcraftedWondersCards = ({ craft }) => {
+const HandcraftedWondersCards = ({craft}) => {
     return (
         <div>
             <div className='px-5 md:px-0 ' data-aos="zoom-in" data-aos-duration="1500">
@@ -22,7 +22,7 @@ const HandcraftedWondersCards = ({ craft }) => {
         </div>
     );
 };
-HandcraftedWondersCards.propTypes = {
+HandcraftedWondersCards.propTypes={
     craft: PropTypes.any.isRequired,
 
 }

@@ -6,7 +6,7 @@ const AllArtCraftItems = () => {
     // console.log(loddedCrafts)
     // const [crafts, setCrafts] = useState(loddedCrafts);
     // console.log(crafts)
-
+    
     return (
         <div>
             <div className="overflow-x-auto">
@@ -60,10 +60,12 @@ const AllArtCraftItems = () => {
                                 </tr>
                             )
                         }
-                 
+                        {/* row 1 */}
+
+                        {/* row 2 */}
 
                     </tbody>
-                  
+                    {/* foot */}
 
 
                 </table>

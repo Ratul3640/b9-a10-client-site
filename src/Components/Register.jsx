@@ -8,7 +8,7 @@ import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 
 const Register = () => {
-    const navigate = useNavigate();
+    const navigate =useNavigate();
 
     const { registerUser } = useContext(AuthContext);
 
