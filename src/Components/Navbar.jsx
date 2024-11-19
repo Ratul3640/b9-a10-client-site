@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
     // dark and light mode 
-
     const [theme, setTheme] = useState(() => {
         const storedTheme = localStorage.getItem('theme');
         return storedTheme || 'light';
